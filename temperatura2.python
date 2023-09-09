@@ -1,0 +1,15 @@
+# Calcular el promedio de temperaturas para cada ciudad y semana
+for ciudad_idx, ciudad in enumerate(ciudades):
+    for semana_idx, semana in enumerate(semanas):
+        # Inicializar la suma de temperaturas para la semana actual
+        suma_temp = 0
+        # Iterar a través de los días de la semana
+        for dia_idx, dia in enumerate(dias_semana):
+            # Obtener la temperatura para el día actual
+            temp = temperaturas[ciudad_idx][semana_idx][dia_idx]["temp"]
+            # Sumar la temperatura al acumulador
+            suma_temp += temp
+        # Calcular el promedio de temperaturas para la semana actual
+        promedio_temp_semana = suma_temp / len(dias_semana)
+        # Mostrar el promedio de temperaturas en pantalla
+        print(f"Promedio de temperaturas para {ciudad} en la semana {semana}: {promedio_temp_semana:.2f}°C")
